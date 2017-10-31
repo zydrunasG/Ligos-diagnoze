@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="ligos_DB@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="ligos_db">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="phpmyadmin"/>
+    <schema id="7" parent="1" name="test"/>
+    <schema id="8" parent="1" name="todolist"/>
+    <table id="9" parent="2" name="ligos"/>
+    <table id="10" parent="2" name="ligossimptomai"/>
+    <table id="11" parent="2" name="pacientai"/>
+    <table id="12" parent="2" name="pacientuligos"/>
+    <table id="13" parent="2" name="simptomai"/>
+    <column id="14" parent="9" name="ligosID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="15" parent="9" name="pavadinimas">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="16" parent="9" name="aprasymas">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="17" parent="9" name="gydymas">
+      <Position>4</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="18" parent="9" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ligosID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="19" parent="10" name="ligosSimptomoID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="20" parent="10" name="ligosID">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="21" parent="10" name="simptomoID">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="22" parent="10" name="ligosSimptomai_fk0">
+      <ColNames>ligosID</ColNames>
+    </index>
+    <index id="23" parent="10" name="ligosSimptomai_fk1">
+      <ColNames>simptomoID</ColNames>
+    </index>
+    <key id="24" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ligosSimptomoID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="25" parent="10" name="ligosSimptomai_fk0">
+      <ColNames>ligosID</ColNames>
+      <RefSchemaName>ligos_db</RefSchemaName>
+      <RefTableName>ligos</RefTableName>
+      <RefColNames>ligosID</RefColNames>
+    </foreign-key>
+    <foreign-key id="26" parent="10" name="ligosSimptomai_fk1">
+      <ColNames>simptomoID</ColNames>
+      <RefSchemaName>ligos_db</RefSchemaName>
+      <RefTableName>simptomai</RefTableName>
+      <RefColNames>simptomoID</RefColNames>
+    </foreign-key>
+    <column id="27" parent="11" name="pacientoID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="28" parent="11" name="vardas">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="11" name="pavarde">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="30" parent="11" name="amzius">
+      <Position>4</Position>
+      <DataType>int(3)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="31" parent="11" name="lytis">
+      <Position>5</Position>
+      <DataType>tinyint(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="32" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>pacientoID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="33" parent="12" name="pacientuLigosID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="34" parent="12" name="pacientoID">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="35" parent="12" name="ligosID">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="36" parent="12" name="pacientuLigos_fk0">
+      <ColNames>pacientoID</ColNames>
+    </index>
+    <index id="37" parent="12" name="pacientuLigos_fk1">
+      <ColNames>ligosID</ColNames>
+    </index>
+    <key id="38" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>pacientuLigosID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="39" parent="12" name="pacientuLigos_fk0">
+      <ColNames>pacientoID</ColNames>
+      <RefSchemaName>ligos_db</RefSchemaName>
+      <RefTableName>pacientai</RefTableName>
+      <RefColNames>pacientoID</RefColNames>
+    </foreign-key>
+    <foreign-key id="40" parent="12" name="pacientuLigos_fk1">
+      <ColNames>ligosID</ColNames>
+      <RefSchemaName>ligos_db</RefSchemaName>
+      <RefTableName>ligos</RefTableName>
+      <RefColNames>ligosID</RefColNames>
+    </foreign-key>
+    <column id="41" parent="13" name="simptomoID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="42" parent="13" name="pavadinimas">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="43" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>simptomoID</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
