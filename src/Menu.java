@@ -27,6 +27,9 @@ public class Menu extends ShowMenu{
                     LiguHistory liguHistory = new LiguHistory(Main.ID);
                     liguHistory.showInfo();
                     break;
+                case 3:
+                    System.out.println("Sveikas githube");
+                    break;
                 default:
                     System.out.println("Tokio veiksmo nėrą!");
                     break;
