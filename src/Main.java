@@ -23,6 +23,7 @@ public class Main {
             System.out.println("4: Išvesti Enum kinamuosius");
             System.out.println("5: Išvesti rodiklius");
             System.out.println("6: Parodyti visas ligas ju aprašymus ir gydymus");
+            System.out.println("7: Nieko nedaro");
 
 
             veiksmas = keyboard.nextInt();
