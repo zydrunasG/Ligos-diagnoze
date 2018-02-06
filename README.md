@@ -1,1 +1,3 @@
-# Hello this is third test
+# Ligos diagnoze
+
+Simple console app
